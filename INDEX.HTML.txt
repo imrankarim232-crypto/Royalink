@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Ink Tattoo Studio | Global Booking & Masterpiece Body Art</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
+                        },
+                        darkBg: '#0B0B0B',
+                        cardBg: '#141414',
+                        cardHover: '#1E1E1E'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0B0B;
+            color: #E5E7EB;
+        }
+        h1, h2, h3, .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA8C2C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        .gold-border:focus {
+            border-color: #D4AF37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-gold selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-gold-dark via-gold to-gold-dark text-black text-xs md:text-sm font-bold py-2 px-4 text-center tracking-wider">
+        <i class="fa-solid fa-globe mr-2"></i> WORLDWIDE CLIENT BOOKINGS OPEN • COLORADO & KENYA RESIDENCIES • WHATSAPP: +254728834107
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-darkBg/95 backdrop-blur-md border-b gold-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gold/10 border border-gold flex items-center justify-center text-gold font-cinzel font-bold text-xl">
+                    R
+                </div>
+                <div>
+                    <span class="text-xl md:text-2xl font-cinzel font-black tracking-widest gold-gradient-text">ROYAL INK</span>
+                    <span class="block text-[10px] tracking-widest text-gray-400 uppercase">By Ryan Bett • Master Artist</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#gallery" class="hover:text-gold transition">Portfolio</a>
+                <a href="#estimator" class="hover:text-gold transition">Price Calculator</a>
+                <a href="#tours" class="hover:text-gold transition">Global Tours</a>
+                <a href="#aftercare" class="hover:text-gold transition">Aftercare & FAQ</a>
+                <a href="#admin" onclick="toggleAdminModal()" class="text-gold/80 hover:text-gold transition flex items-center gap-1"><i class="fa-solid fa-lock text-xs"></i> Admin Portal</a>
+            </nav>
+
+            <!-- CTA & WhatsApp -->
+            <div class="flex items-center space-x-4">
+                <a href="https://wa.me/254728834107" target="_blank" class="hidden sm:inline-flex items-center space-x-2 text-xs font-semibold bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 px-3 py-2 rounded-full hover:bg-emerald-600/30 transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>+254 728 834107</span>
+                </a>
+                <a href="#booking" class="bg-gold hover:bg-gold-light text-black font-bold px-5 py-2.5 rounded-md text-sm transition shadow-lg shadow-gold/20 flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-gold text-xl focus:outline-none">
+                    <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b gold-border px-6 py-4 space-y-3">
+            <a href="#gallery" class="block text-sm hover:text-gold py-1">Portfolio</a>
+            <a href="#estimator" class="block text-sm hover:text-gold py-1">Price Calculator</a>
+            <a href="#tours" class="block text-sm hover:text-gold py-1">Global Tours</a>
+            <a href="#aftercare" class="block text-sm hover:text-gold py-1">Aftercare & FAQ</a>
+            <a href="#admin" onclick="toggleAdminModal()" class="block text-sm text-gold py-1">Admin Portal</a>
+            <a href="https://wa.me/254728834107" target="_blank" class="flex items-center space-x-2 text-sm text-emerald-400 py-1">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp: +254728834107</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center bg-cover bg-center px-4" style="background-image: linear-gradient(to bottom, rgba(11,11,11,0.7), rgba(11,11,11,0.95)), url('https://images.unsplash.com/photo-1598371839606-f38b251e18cc?auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-gradient-to-t from-darkBg via-transparent to-darkBg/60"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center space-y-6 py-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border gold-border text-gold text-xs uppercase tracking-widest font-semibold">
+                <i class="fa-solid fa-crown text-xs"></i> Led by Master Artist Ryan Bett
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-cinzel tracking-tight leading-none text-white">
+                WORLD-CLASS <span class="gold-gradient-text">TATTOO ARTISTRY</span>
+            </h1>
+            <p class="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto font-light">
+                From intricate fine-line micro pieces to massive custom Japanese backpieces and black & grey realism. Servicing clients across Colorado, Kenya, and worldwide.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#booking" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-black font-bold px-8 py-4 rounded-md text-base transition shadow-xl shadow-gold/20 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-pen-nib"></i> Book Your Session Now
+                </a>
+                <a href="#gallery" class="w-full sm:w-auto bg-cardBg hover:bg-cardHover border gold-border text-white font-semibold px-8 py-4 rounded-md text-base transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-images"></i> Explore Global Portfolio
+                </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 max-w-3xl mx-auto border-t border-white/10">
+                <div class="text-center">
+                    <span class="block text-2xl md:text-3xl font-cinzel font-bold text-gold">10+</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">Years Experience</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-2xl md:text-3xl font-cinzel font-bold text-gold">5,000+</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">Tattoos Crafted</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-2xl md:text-3xl font-cinzel font-bold text-gold">Global</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">International Clients</span>
+                </div>
+                <div class="text-center">
+                    <span class="block text-2xl md:text-3xl font-cinzel font-bold text-gold">100%</span>
+                    <span class="text-xs text-gray-400 uppercase tracking-wider">Sterile & Safe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Tattoo Portfolio Section -->
+    <section id="gallery" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span class="text-gold text-xs uppercase tracking-widest font-semibold"><i class="fa-solid fa-wand-magic-sparkles"></i> Curated Masterpieces</span>
+            <h2 class="text-3xl sm:text-5xl font-cinzel font-bold text-white">WORLDWIDE TATTOO GALLERY</h2>
+            <p class="text-gray-400 text-sm sm:text-base">Explore tattoo examples ranging from tiny minimalist micro fine-line art to full Japanese bodysuits and stunning realism portraits.</p>
+            
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 pt-6">
+                <button onclick="filterGallery('all')" class="gallery-btn px-4 py-2 rounded-full text-xs font-semibold bg-gold text-black transition">All Styles</button>
+                <button onclick="filterGallery('micro')" class="gallery-btn px-4 py-2 rounded-full text-xs font-semibold bg-cardBg hover:bg-cardHover border gold-border text-gray-300 transition">Micro & Fine-Line</button>
+                <button onclick="filterGallery('realism')" class="gallery-btn px-4 py-2 rounded-full text-xs font-semibold bg-cardBg hover:bg-cardHover border gold-border text-gray-300 transition">Realism & Portraits</button>
+                <button onclick="filterGallery('blackwork')" class="gallery-btn px-4 py-2 rounded-full text-xs font-semibold bg-cardBg hover:bg-cardHover border gold-border text-gray-300 transition">Blackwork & Tribal</button>
+                <button onclick="filterGallery('japanese')" class="gallery-btn px-4 py-2 rounded-full text-xs font-semibold bg-cardBg hover:bg-cardHover border gold-border text-gray-300 transition">Japanese & Sleeves</button>
+                <button onclick="filterGallery('color')" class="gallery-btn px-4 py-2 rounded-full text-xs font-semibold bg-cardBg hover:bg-cardHover border gold-border text-gray-300 transition">Neo-Traditional & Color</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item 1: Micro / Fine Line -->
+            <div class="gallery-item group relative rounded-xl overflow-hidden bg-cardBg border gold-border shadow-xl cursor-pointer" data-category="micro" onclick="openLightbox('https://images.unsplash.com/photo-1611501275017-9b2f677d2459?auto=format&fit=crop&w=800&q=80', 'Constellation Fine-Line Minimalist', 'Micro & Fine-Line', 'Delicate single-needle cosmic geometry on inner forearm.')">
+                <div class="h-80 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1611501275017-9b2f677d2459?auto=format&fit=crop&w=800&q=80" alt="Fine Line Tattoo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Micro & Fine-Line</span>
+                    <h3 class="text-xl font-cinzel font-bold text-white">Constellation Fine-Line</h3>
+                    <p class="text-xs text-gray-300 line-clamp-2">Delicate single-needle cosmic geometry on inner forearm.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold"><i class="fa-solid fa-magnifying-glass-plus">Click to preview</i></span>
+                        <button onclick="event.stopPropagation(); preselectStyle('Micro Fine-Line')" class="bg-gold/20 hover:bg-gold text-gold hover:text-black text-xs font-bold px-3 py-1.5 rounded transition">Book This Style</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Realism -->
+            <div class="gallery-item group relative rounded-xl overflow-hidden bg-cardBg border gold-border shadow-xl cursor-pointer" data-category="realism" onclick="openLightbox('https://images.unsplash.com/photo-1598371839606-f38b251e18cc?auto=format&fit=crop&w=800&q=80', 'Lion King Black & Grey Realism', 'Realism & Portraits', 'High-contrast majestic wildlife portrait with deep shadows.')">
+                <div class="h-80 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1598371839606-f38b251e18cc?auto=format&fit=crop&w=800&q=80" alt="Realism Tattoo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Realism & Portraits</span>
+                    <h3 class="text-xl font-cinzel font-bold text-white">Wildlife Realism</h3>
+                    <p class="text-xs text-gray-300 line-clamp-2">High-contrast majestic lion portrait with deep textured shadows.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold"><i class="fa-solid fa-magnifying-glass-plus">Click to preview</i></span>
+                        <button onclick="event.stopPropagation(); preselectStyle('Realism Portrait')" class="bg-gold/20 hover:bg-gold text-gold hover:text-black text-xs font-bold px-3 py-1.5 rounded transition">Book This Style</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: Japanese & Sleeves -->
+            <div class="gallery-item group relative rounded-xl overflow-hidden bg-cardBg border gold-border shadow-xl cursor-pointer" data-category="japanese" onclick="openLightbox('https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80', 'Traditional Japanese Dragon Full Sleeve', 'Japanese & Sleeves', 'Full sleeve Japanese Irezumi featuring dragon and cherry blossoms.')">
+                <div class="h-80 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80" alt="Japanese Sleeve Tattoo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Japanese & Sleeves</span>
+                    <h3 class="text-xl font-cinzel font-bold text-white">Japanese Irezumi Sleeve</h3>
+                    <p class="text-xs text-gray-300 line-clamp-2">Full sleeve Japanese dragon artwork with wind bars and cherry blossoms.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold"><i class="fa-solid fa-magnifying-glass-plus">Click to preview</i></span>
+                        <button onclick="event.stopPropagation(); preselectStyle('Japanese Sleeve')" class="bg-gold/20 hover:bg-gold text-gold hover:text-black text-xs font-bold px-3 py-1.5 rounded transition">Book This Style</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Blackwork -->
+            <div class="gallery-item group relative rounded-xl overflow-hidden bg-cardBg border gold-border shadow-xl cursor-pointer" data-category="blackwork" onclick="openLightbox('https://images.unsplash.com/photo-1590246814883-57c52445e0d4?auto=format&fit=crop&w=800&q=80', 'Geometric Sacred Blackwork', 'Blackwork & Tribal', 'Bold heavy blackwork sleeve with sacred geometry patterns.')">
+                <div class="h-80 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1590246814883-57c52445e0d4?auto=format&fit=crop&w=800&q=80" alt="Blackwork Tattoo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Blackwork & Tribal</span>
+                    <h3 class="text-xl font-cinzel font-bold text-white">Sacred Geometric Blackwork</h3>
+                    <p class="text-xs text-gray-300 line-clamp-2">Bold solid blackwork patterns with intricate dotwork shading.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold"><i class="fa-solid fa-magnifying-glass-plus">Click to preview</i></span>
+                        <button onclick="event.stopPropagation(); preselectStyle('Blackwork')" class="bg-gold/20 hover:bg-gold text-gold hover:text-black text-xs font-bold px-3 py-1.5 rounded transition">Book This Style</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: Neo-Traditional / Color -->
+            <div class="gallery-item group relative rounded-xl overflow-hidden bg-cardBg border gold-border shadow-xl cursor-pointer" data-category="color" onclick="openLightbox('https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&w=800&q=80', 'Vibrant Neo-Traditional Panther', 'Neo-Traditional & Color', 'Rich saturated color palette featuring bold outlines and shading.')">
+                <div class="h-80 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?auto=format&fit=crop&w=800&q=80" alt="Color Tattoo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Neo-Traditional & Color</span>
+                    <h3 class="text-xl font-cinzel font-bold text-white">Vibrant Neo-Traditional</h3>
+                    <p class="text-xs text-gray-300 line-clamp-2">Rich saturated color palette with bold outlines and striking contrast.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold"><i class="fa-solid fa-magnifying-glass-plus">Click to preview</i></span>
+                        <button onclick="event.stopPropagation(); preselectStyle('Color Neo-Traditional')" class="bg-gold/20 hover:bg-gold text-gold hover:text-black text-xs font-bold px-3 py-1.5 rounded transition">Book This Style</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Micro Floral -->
+            <div class="gallery-item group relative rounded-xl overflow-hidden bg-cardBg border gold-border shadow-xl cursor-pointer" data-category="micro" onclick="openLightbox('https://images.unsplash.com/photo-1550537687-c91074c4792d?auto=format&fit=crop&w=800&q=80', 'Botanical Line Work Rose', 'Micro & Fine-Line', 'Fine-line botanical rose on collarbone with delicate dotwork.')">
+                <div class="h-80 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1550537687-c91074c4792d?auto=format&fit=crop&w=800&q=80" alt="Botanical Tattoo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Micro & Fine-Line</span>
+                    <h3 class="text-xl font-cinzel font-bold text-white">Botanical Fine-Line Rose</h3>
+                    <p class="text-xs text-gray-300 line-clamp-2">Fine-line botanical floral piece on collarbone with dotwork shading.</p>
+                    <div class="pt-2 flex items-center justify-between">
+                        <span class="text-xs text-gold font-semibold"><i class="fa-solid fa-magnifying-glass-plus">Click to preview</i></span>
+                        <button onclick="event.stopPropagation(); preselectStyle('Micro Botanical')" class="bg-gold/20 hover:bg-gold text-gold hover:text-black text-xs font-bold px-3 py-1.5 rounded transition">Book This Style</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Price & Time Estimator -->
+    <section id="estimator" class="py-20 bg-cardBg/50 border-y gold-border px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-gold text-xs uppercase tracking-widest font-semibold"><i class="fa-solid fa-calculator"></i> Transparent Pricing</span>
+                <h2 class="text-3xl sm:text-4xl font-cinzel font-bold text-white">ESTIMATE YOUR TATTOO</h2>
+                <p class="text-gray-400 text-sm">Adjust the sliders below to calculate an instant estimated price range, session duration, and required booking deposit.</p>
+            </div>
+
+            <div class="bg-cardBg border gold-border rounded-2xl p-6 sm:p-10 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Controls -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">1. Tattoo Style / Complexity</label>
+                        <select id="est-style" onchange="calculateEstimate()" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none">
+                            <option value="1">Fine-Line / Minimalist (Standard)</option>
+                            <option value="1.5" selected>Black & Grey / Realism</option>
+                            <option value="2">Japanese Irezumi / Heavy Sleeve</option>
+                            <option value="1.8">Color / Neo-Traditional</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-300 mb-2">
+                            <span>2. Approximate Size (Inches / cm)</span>
+                            <span id="size-val" class="text-gold font-bold">6 inches (Palm Size)</span>
+                        </div>
+                        <input type="range" id="est-size" min="2" max="20" value="6" step="1" oninput="calculateEstimate()" class="w-full accent-gold cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-gray-500 mt-1">
+                            <span>2" (Tiny)</span>
+                            <span>10" (Half Sleeve)</span>
+                            <span>20" (Full Back)</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-2">3. Preferred Currency</label>
+                        <select id="est-currency" onchange="calculateEstimate()" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none">
+                            <option value="USD" selected>USD ($)</option>
+                            <option value="KES">Kenyan Shilling (KES)</option>
+                            <option value="EUR">Euro (€)</option>
+                            <option value="GBP">British Pound (£)</option>
+                            <option value="AUD">Australian Dollar (AUD)</option>
+                            <option value="JPY">Japanese Yen (¥)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Results Box -->
+                <div class="bg-darkBg border gold-border rounded-xl p-6 sm:p-8 text-center space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-gray-400">Estimated Price Range</span>
+                        <div id="result-price" class="text-3xl sm:text-4xl font-cinzel font-bold text-gold my-2">$350 - $550</div>
+                        <p class="text-xs text-gray-400">Includes consultation, stencil prep, and professional aftercare kit.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 py-4 border-y border-white/10">
+                        <div>
+                            <span class="block text-xs text-gray-400 uppercase">Estimated Time</span>
+                            <span id="result-time" class="text-lg font-bold text-white">3 - 4 Hours</span>
+                        </div>
+                        <div>
+                            <span class="block text-xs text-gray-400 uppercase">Required Deposit</span>
+                            <span id="result-deposit" class="text-lg font-bold text-gold">$100</span>
+                        </div>
+                    </div>
+
+                    <a href="#booking" onclick="transferEstimateToBooking()" class="w-full bg-gold hover:bg-gold-light text-black font-bold py-3.5 rounded-lg transition text-sm flex items-center justify-center gap-2 shadow-lg shadow-gold/20">
+                        <i class="fa-solid fa-arrow-right"></i> Book with This Estimate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Tours & Guest Spots -->
+    <section id="tours" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+            <span class="text-gold text-xs uppercase tracking-widest font-semibold"><i class="fa-solid fa-plane-departure"></i> International Itinerary</span>
+            <h2 class="text-3xl sm:text-5xl font-cinzel font-bold text-white">GLOBAL GUEST SPOTS & TOURS</h2>
+            <p class="text-gray-400 text-sm">Ryan Bett travels worldwide for convention guest spots and private residencies. Check when Ryan is visiting your city.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Location 1 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 space-y-4 hover:border-gold transition">
+                <div class="flex items-center justify-between">
+                    <span class="bg-gold/20 text-gold text-xs px-3 py-1 rounded-full font-semibold">Primary Studio</span>
+                    <span class="text-xs text-emerald-400 font-semibold"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Open Year-Round</span>
+                </div>
+                <h3 class="text-2xl font-cinzel font-bold text-white">Colorado, USA</h3>
+                <p class="text-xs text-gray-300">Royal Ink Flagship Studio. Fully private, upscale custom tattooing suite.</p>
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                    <span><i class="fa-solid fa-calendar text-gold mr-1"></i> Mon - Sat</span>
+                    <a href="#booking" class="text-gold hover:underline font-semibold">Book Colorado &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Location 2 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 space-y-4 hover:border-gold transition">
+                <div class="flex items-center justify-between">
+                    <span class="bg-gold/20 text-gold text-xs px-3 py-1 rounded-full font-semibold">Residency</span>
+                    <span class="text-xs text-amber-400 font-semibold"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Booking Fast</span>
+                </div>
+                <h3 class="text-2xl font-cinzel font-bold text-white">Nairobi & Coast, Kenya</h3>
+                <p class="text-xs text-gray-300">Exclusive East African guest residencies and custom tattoo sessions.</p>
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                    <span><i class="fa-solid fa-calendar text-gold mr-1"></i> Next Slots: Nov 2026</span>
+                    <a href="#booking" class="text-gold hover:underline font-semibold">Book Kenya &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Location 3 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 space-y-4 hover:border-gold transition">
+                <div class="flex items-center justify-between">
+                    <span class="bg-gold/20 text-gold text-xs px-3 py-1 rounded-full font-semibold">World Tour</span>
+                    <span class="text-xs text-blue-400 font-semibold"><i class="fa-solid fa-circle text-[8px] mr-1"></i> London / Tokyo</span>
+                </div>
+                <h3 class="text-2xl font-cinzel font-bold text-white">International Guest Spots</h3>
+                <p class="text-xs text-gray-300">Annual convention tours across London, Los Angeles, and Tokyo.</p>
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                    <span><i class="fa-solid fa-calendar text-gold mr-1"></i> Check Schedule</span>
+                    <a href="#booking" class="text-gold hover:underline font-semibold">Inquire Tour &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-Step Online Booking & Payment Wizard -->
+    <section id="booking" class="py-20 bg-cardBg/50 border-t gold-border px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+                <span class="text-gold text-xs uppercase tracking-widest font-semibold"><i class="fa-solid fa-shield-halved"></i> Secure Booking Portal</span>
+                <h2 class="text-3xl sm:text-4xl font-cinzel font-bold text-white">SECURE YOUR APPOINTMENT</h2>
+                <p class="text-gray-400 text-sm">Fill out your tattoo concept, select your date, and pay your deposit via M-Pesa, Western Union, PayPal, or Card.</p>
+            </div>
+
+            <div class="bg-cardBg border gold-border rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <!-- Step Indicator -->
+                <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/10 text-xs sm:text-sm font-semibold">
+                    <div id="step-indicator-1" class="text-gold flex items-center gap-1.5"><span class="w-6 h-6 rounded-full bg-gold text-black flex items-center justify-center font-bold">1</span> Details</div>
+                    <div class="text-gray-600">----------------</div>
+                    <div id="step-indicator-2" class="text-gray-500 flex items-center gap-1.5"><span class="w-6 h-6 rounded-full bg-gray-800 text-gray-400 flex items-center justify-center font-bold">2</span> Concept</div>
+                    <div class="text-gray-600">----------------</div>
+                    <div id="step-indicator-3" class="text-gray-500 flex items-center gap-1.5"><span class="w-6 h-6 rounded-full bg-gray-800 text-gray-400 flex items-center justify-center font-bold">3</span> Schedule</div>
+                    <div class="text-gray-600">----------------</div>
+                    <div id="step-indicator-4" class="text-gray-500 flex items-center gap-1.5"><span class="w-6 h-6 rounded-full bg-gray-800 text-gray-400 flex items-center justify-center font-bold">4</span> Deposit</div>
+                </div>
+
+                <!-- Form Wizard Form -->
+                <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+                    <!-- Step 1: Personal Details -->
+                    <div id="wizard-step-1" class="space-y-6">
+                        <h3 class="text-xl font-cinzel font-bold text-white mb-4"><i class="fa-solid fa-user text-gold mr-2"></i> Client Information</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Full Name *</label>
+                                <input type="text" id="client-name" required placeholder="e.g. Alex Morgan" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Email Address *</label>
+                                <input type="email" id="client-email" required placeholder="alex@example.com" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">WhatsApp / Phone Number *</label>
+                                <input type="tel" id="client-phone" required placeholder="+1 (555) 019-2834" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Preferred Location *</label>
+                                <select id="client-location" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                                    <option value="Colorado, USA">Colorado, USA (Flagship Studio)</option>
+                                    <option value="Nairobi, Kenya">Nairobi, Kenya (Residency)</option>
+                                    <option value="Coast, Kenya">Coast, Kenya (Residency)</option>
+                                    <option value="International Tour">International Tour / Guest Spot</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex justify-end pt-4">
+                            <button type="button" onclick="goToStep(2)" class="bg-gold hover:bg-gold-light text-black font-bold px-6 py-3 rounded-lg text-sm transition flex items-center gap-2">
+                                Next: Tattoo Concept <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Concept & Style -->
+                    <div id="wizard-step-2" class="space-y-6 hidden">
+                        <h3 class="text-xl font-cinzel font-bold text-white mb-4"><i class="fa-solid fa-palette text-gold mr-2"></i> Tattoo Concept & Style</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Tattoo Style *</label>
+                                <select id="booking-style" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                                    <option value="Fine Line / Micro">Fine Line / Micro</option>
+                                    <option value="Black & Grey Realism">Black & Grey Realism</option>
+                                    <option value="Japanese Sleeve">Japanese Sleeve</option>
+                                    <option value="Blackwork">Blackwork & Tribal</option>
+                                    <option value="Color Neo-Traditional">Color Neo-Traditional</option>
+                                    <option value="Custom Freehand">Custom Freehand</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Body Placement *</label>
+                                <input type="text" id="booking-placement" required placeholder="e.g. Left Forearm, Outer Thigh, Back" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Description & Idea Details *</label>
+                            <textarea id="booking-description" rows="3" required placeholder="Describe your tattoo idea, size in inches, elements, and black & grey vs color preference..." class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Upload Reference Image (Optional)</label>
+                            <input type="file" id="booking-file" accept="image/*" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-2.5 text-gray-300 text-xs file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-gold file:text-black hover:file:bg-gold-light cursor-pointer">
+                        </div>
+                        <div class="flex justify-between pt-4">
+                            <button type="button" onclick="goToStep(1)" class="bg-cardBg hover:bg-cardHover border gold-border text-white font-semibold px-6 py-3 rounded-lg text-sm transition">
+                                <i class="fa-solid fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" onclick="goToStep(3)" class="bg-gold hover:bg-gold-light text-black font-bold px-6 py-3 rounded-lg text-sm transition flex items-center gap-2">
+                                Next: Schedule Date <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Date & Time -->
+                    <div id="wizard-step-3" class="space-y-6 hidden">
+                        <h3 class="text-xl font-cinzel font-bold text-white mb-4"><i class="fa-solid fa-calendar-days text-gold mr-2"></i> Select Date & Time Slot</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Preferred Appointment Date *</label>
+                                <input type="date" id="booking-date" required class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1">Preferred Time Slot *</label>
+                                <select id="booking-timeslot" class="w-full bg-darkBg border gold-border rounded-lg px-4 py-3 text-white focus:outline-none text-sm">
+                                    <option value="10:00 AM (Morning Session)">10:00 AM (Morning Session)</option>
+                                    <option value="02:00 PM (Afternoon Session)">02:00 PM (Afternoon Session)</option>
+                                    <option value="06:00 PM (Evening Session)">06:00 PM (Evening Session)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bg-darkBg/80 p-4 rounded-lg border gold-border text-xs text-gray-300 space-y-1">
+                            <p class="font-semibold text-gold"><i class="fa-solid fa-circle-info mr-1"></i> Timezone Notice:</p>
+                            <p>Appointments automatically adjust to local studio time (Colorado Mountain Time or East Africa Time).</p>
+                        </div>
+                        <div class="flex justify-between pt-4">
+                            <button type="button" onclick="goToStep(2)" class="bg-cardBg hover:bg-cardHover border gold-border text-white font-semibold px-6 py-3 rounded-lg text-sm transition">
+                                <i class="fa-solid fa-arrow-left"></i> Back
+                            </button>
+                            <button type="button" onclick="goToStep(4)" class="bg-gold hover:bg-gold-light text-black font-bold px-6 py-3 rounded-lg text-sm transition flex items-center gap-2">
+                                Next: Deposit Payment <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Deposit Payment (M-Pesa, Western Union, PayPal, Card) -->
+                    <div id="wizard-step-4" class="space-y-6 hidden">
+                        <h3 class="text-xl font-cinzel font-bold text-white mb-2"><i class="fa-solid fa-lock text-gold mr-2"></i> Secure Deposit & Payment</h3>
+                        <p class="text-xs text-gray-400">A $50 / KES 6,500 non-refundable deposit secures your appointment slot and goes toward your final tattoo piece.</p>
+
+                        <!-- Payment Method Tabs -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+                            <button type="button" onclick="switchPayMethod('mpesa')" id="tab-mpesa" class="pay-tab bg-gold text-black font-bold text-xs py-3 px-2 rounded-lg border gold-border transition flex flex-col items-center gap-1">
+                                <i class="fa-solid fa-mobile-screen text-base"></i> M-Pesa (Kenya)
+                            </button>
+                            <button type="button" onclick="switchPayMethod('western')" id="tab-western" class="pay-tab bg-darkBg text-gray-300 font-bold text-xs py-3 px-2 rounded-lg border gold-border transition flex flex-col items-center gap-1">
+                                <i class="fa-solid fa-globe text-base"></i> Western Union / Remitly
+                            </button>
+                            <button type="button" onclick="switchPayMethod('paypal')" id="tab-paypal" class="pay-tab bg-darkBg text-gray-300 font-bold text-xs py-3 px-2 rounded-lg border gold-border transition flex flex-col items-center gap-1">
+                                <i class="fa-brands fa-paypal text-base"></i> PayPal
+                            </button>
+                            <button type="button" onclick="switchPayMethod('card')" id="tab-card" class="pay-tab bg-darkBg text-gray-300 font-bold text-xs py-3 px-2 rounded-lg border gold-border transition flex flex-col items-center gap-1">
+                                <i class="fa-solid fa-credit-card text-base"></i> Credit / Debit Card
+                            </button>
+                        </div>
+
+                        <!-- Payment Method Content Panels -->
+                        <div class="bg-darkBg p-6 rounded-xl border gold-border space-y-4">
+                            <!-- M-Pesa Panel -->
+                            <div id="panel-mpesa" class="pay-panel space-y-3">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                                    <span class="text-xs font-bold text-gold uppercase tracking-wider">🇰🇪 M-Pesa Direct Deposit</span>
+                                    <span class="text-xs text-gray-400">Account Name: <strong class="text-white">RYAN BETT</strong></span>
+                                </div>
+                                <div class="bg-black/40 p-4 rounded-lg space-y-2 text-xs">
+                                    <p class="text-gray-300">Send deposit to M-Pesa Phone Number:</p>
+                                    <div class="text-lg font-mono font-bold text-gold tracking-widest">+254 728 834107</div>
+                                    <p class="text-gray-400 text-[11px]">Include your name or invoice reference in the M-Pesa confirmation message.</p>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">M-Pesa Transaction Confirmation Code *</label>
+                                    <input type="text" id="mpesa-code" placeholder="e.g. QK8192X100" class="w-full bg-cardBg border gold-border rounded-lg px-4 py-2.5 text-white font-mono uppercase focus:outline-none text-sm">
+                                </div>
+                            </div>
+
+                            <!-- Western Union Panel -->
+                            <div id="panel-western" class="pay-panel space-y-3 hidden">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                                    <span class="text-xs font-bold text-gold uppercase tracking-wider">🌎 Western Union / Remitly / WorldRemit</span>
+                                    <span class="text-xs text-gray-400">Recipient: <strong class="text-white">RYAN BETT (Kenya)</strong></span>
+                                </div>
+                                <p class="text-xs text-gray-300">Send transfer to Ryan Bett (+254728834107) in Kenya via Western Union, Remitly, or WorldRemit, then enter your MTCN reference code below.</p>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">MTCN / Transfer Reference Number *</label>
+                                    <input type="text" id="western-code" placeholder="e.g. 1234567890" class="w-full bg-cardBg border gold-border rounded-lg px-4 py-2.5 text-white font-mono uppercase focus:outline-none text-sm">
+                                </div>
+                            </div>
+
+                            <!-- PayPal Panel -->
+                            <div id="panel-paypal" class="pay-panel space-y-3 hidden">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                                    <span class="text-xs font-bold text-gold uppercase tracking-wider">💳 PayPal Secure Checkout</span>
+                                    <span class="text-xs text-gray-400">Verified Business</span>
+                                </div>
+                                <p class="text-xs text-gray-300">Click below to simulate secure PayPal deposit payment ($50 USD equivalent).</p>
+                                <div class="p-3 bg-blue-950/30 border border-blue-500/30 rounded-lg text-xs text-blue-300 flex items-center justify-between">
+                                    <span>PayPal Account: ryanbett@royalink.com</span>
+                                    <span class="font-bold">$50.00 USD</span>
+                                </div>
+                            </div>
+
+                            <!-- Card Panel -->
+                            <div id="panel-card" class="pay-panel space-y-3 hidden">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                                    <span class="text-xs font-bold text-gold uppercase tracking-wider">💳 Credit / Debit Card (Stripe)</span>
+                                    <span class="text-xs text-gray-400"><i class="fa-solid fa-lock text-gold"></i> 256-bit SSL</span>
+                                </div>
+                                <div class="space-y-3">
+                                    <div>
+                                        <label class="block text-[11px] text-gray-400 mb-1">Card Number</label>
+                                        <input type="text" placeholder="4242 •••• •••• 4242" class="w-full bg-cardBg border gold-border rounded-lg px-3 py-2 text-white font-mono text-xs focus:outline-none">
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div>
+                                            <label class="block text-[11px] text-gray-400 mb-1">Expiry Date</label>
+                                            <input type="text" placeholder="MM/YY" class="w-full bg-cardBg border gold-border rounded-lg px-3 py-2 text-white font-mono text-xs focus:outline-none">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[11px] text-gray-400 mb-1">CVC</label>
+                                            <input type="text" placeholder="CVC" class="w-full bg-cardBg border gold-border rounded-lg px-3 py-2 text-white font-mono text-xs focus:outline-none">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security guarantee -->
+                        <div class="text-[11px] text-gray-400 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-gold"></i>
+                            <span>We never ask for PINs, passwords, or OTP verification codes. Payments are confirmed securely by Ryan Bett.</span>
+                        </div>
+
+                        <div class="flex justify-between pt-4">
+                            <button type="button" onclick="goToStep(3)" class="bg-cardBg hover:bg-cardHover border gold-border text-white font-semibold px-6 py-3 rounded-lg text-sm transition">
+                                <i class="fa-solid fa-arrow-left"></i> Back
+                            </button>
+                            <button type="submit" class="bg-gold hover:bg-gold-light text-black font-bold px-8 py-3.5 rounded-lg text-sm transition shadow-lg shadow-gold/20 flex items-center gap-2">
+                                <i class="fa-solid fa-check-circle"></i> Confirm & Submit Booking
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aftercare & FAQ Section -->
+    <section id="aftercare" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span class="text-gold text-xs uppercase tracking-widest font-semibold"><i class="fa-solid fa-book-medical"></i> Healing & Guidelines</span>
+            <h2 class="text-3xl sm:text-4xl font-cinzel font-bold text-white">AFTERCARE & STUDIO FAQ</h2>
+            <p class="text-gray-400 text-sm">Everything you need to know before and after getting tattooed by Ryan Bett.</p>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-semibold text-white">
+                    <span><i class="fa-solid fa-circle-question text-gold mr-2"></i> How do I prepare for my tattoo appointment?</span>
+                    <i class="fa-solid fa-chevron-down text-gold transition duration-300"></i>
+                </div>
+                <div class="faq-content hidden pt-4 text-xs sm:text-sm text-gray-300 space-y-2 border-t border-white/10 mt-4">
+                    <p>Get a good night's rest, eat a solid meal 1-2 hours before your session to keep your blood sugar stable, and stay well hydrated. Avoid alcohol and blood thinners 24 hours prior to your appointment.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-semibold text-white">
+                    <span><i class="fa-solid fa-circle-question text-gold mr-2"></i> What is the deposit policy?</span>
+                    <i class="fa-solid fa-chevron-down text-gold transition duration-300"></i>
+                </div>
+                <div class="faq-content hidden pt-4 text-xs sm:text-sm text-gray-300 space-y-2 border-t border-white/10 mt-4">
+                    <p>A non-refundable $50 / KES 6,500 deposit is required to lock in your date and time. This amount is fully deducted from the final price of your tattoo during your session.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-semibold text-white">
+                    <span><i class="fa-solid fa-circle-question text-gold mr-2"></i> What are the aftercare instructions?</span>
+                    <i class="fa-solid fa-chevron-down text-gold transition duration-300"></i>
+                </div>
+                <div class="faq-content hidden pt-4 text-xs sm:text-sm text-gray-300 space-y-2 border-t border-white/10 mt-4">
+                    <p>Keep bandage on for 2–4 hours (or as instructed for second-skin). Wash gently with warm water and antibacterial unscented soap. Pat dry with a clean paper towel and apply a thin layer of recommended aftercare ointment 2-3 times daily.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="bg-cardBg border gold-border rounded-xl p-6 cursor-pointer" onclick="toggleFaq(this)">
+                <div class="flex items-center justify-between font-semibold text-white">
+                    <span><i class="fa-solid fa-circle-question text-gold mr-2"></i> How can I contact Ryan Bett directly?</span>
+                    <i class="fa-solid fa-chevron-down text-gold transition duration-300"></i>
+                </div>
+                <div class="faq-content hidden pt-4 text-xs sm:text-sm text-gray-300 space-y-2 border-t border-white/10 mt-4">
+                    <p>You can reach Ryan Bett instantly via WhatsApp at <a href="https://wa.me/254728834107" target="_blank" class="text-gold font-bold underline">+254 728 834107</a> or via email at ryanbett@royalink.com.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cardBg border-t gold-border py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-gold/10 border border-gold flex items-center justify-center text-gold font-cinzel font-bold">R</div>
+                    <span class="text-lg font-cinzel font-bold text-white tracking-widest">ROYAL INK</span>
+                </div>
+                <p class="text-xs text-gray-400">Masterpiece body art crafted by Ryan Bett. Serving Colorado, Kenya, and global tattoo collectors.</p>
+            </div>
+            <div>
+                <h4 class="text-sm font-cinzel font-bold text-gold uppercase mb-3">Quick Links</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#gallery" class="hover:text-gold transition">Portfolio Gallery</a></li>
+                    <li><a href="#estimator" class="hover:text-gold transition">Price Calculator</a></li>
+                    <li><a href="#tours" class="hover:text-gold transition">Global Tours</a></li>
+                    <li><a href="#booking" class="hover:text-gold transition">Online Booking</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-cinzel font-bold text-gold uppercase mb-3">Contact & Direct</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><i class="fa-brands fa-whatsapp text-emerald-400 mr-1"></i> <a href="https://wa.me/254728834107" target="_blank" class="hover:text-gold">+254 728 834107</a></li>
+                    <li><i class="fa-solid fa-envelope text-gold mr-1"></i> ryanbett@royalink.com</li>
+                    <li><i class="fa-solid fa-location-dot text-gold mr-1"></i> Colorado, USA & Kenya</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-sm font-cinzel font-bold text-gold uppercase mb-3">Social & Connect</h4>
+                <div class="flex items-center space-x-3 text-lg">
+                    <a href="#" class="w-9 h-9 rounded-full bg-darkBg border gold-border flex items-center justify-center text-gold hover:bg-gold hover:text-black transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/254728834107" target="_blank" class="w-9 h-9 rounded-full bg-darkBg border gold-border flex items-center justify-center text-emerald-400 hover:bg-emerald-500 hover:text-black transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-darkBg border gold-border flex items-center justify-center text-gold hover:bg-gold hover:text-black transition"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-darkBg border gold-border flex items-center justify-center text-gold hover:bg-gold hover:text-black transition"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-6 border-t border-white/10 text-center text-xs text-gray-500">
+            &copy; 2026 Royal Ink Tattoo Studio. All rights reserved. Designed for Ryan Bett.
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative bg-cardBg border gold-border max-w-3xl w-full rounded-2xl overflow-hidden shadow-2xl">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/70 text-white hover:text-gold flex items-center justify-center text-lg transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="h-72 md:h-full bg-black">
+                    <img id="lightbox-img" src="" alt="Tattoo Preview" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 md:p-8 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span id="lightbox-cat" class="text-xs uppercase tracking-widest text-gold font-semibold"></span>
+                        <h3 id="lightbox-title" class="text-2xl font-cinzel font-bold text-white mt-1"></h3>
+                        <p id="lightbox-desc" class="text-xs text-gray-300 mt-2 leading-relaxed"></p>
+                    </div>
+                    <div class="space-y-3 pt-4 border-t border-white/10">
+                        <div class="text-xs text-gray-400">
+                            <i class="fa-solid fa-user-shield text-gold mr-1"></i> Artist: Ryan Bett (Royal Ink)
+                        </div>
+                        <button onclick="bookFromLightbox()" class="w-full bg-gold hover:bg-gold-light text-black font-bold py-3 rounded-lg text-sm transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-check"></i> Book This Style Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Receipt & Success Modal -->
+    <div id="receipt-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative bg-cardBg border gold-border max-w-md w-full rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl text-center">
+            <div class="w-16 h-16 bg-gold/10 border border-gold rounded-full flex items-center justify-center mx-auto text-gold text-2xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <span class="text-xs text-gold uppercase tracking-widest font-semibold">Booking Confirmed</span>
+                <h3 class="text-2xl font-cinzel font-bold text-white mt-1">ROYAL INK PASS</h3>
+                <p id="receipt-id" class="text-xs font-mono text-gray-400 mt-1">#ROYAL-8821</p>
+            </div>
+            <div class="bg-darkBg p-4 rounded-xl text-left space-y-2 text-xs border gold-border">
+                <div class="flex justify-between"><span class="text-gray-400">Client:</span> <span id="r-name" class="font-bold text-white"></span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Style & Placement:</span> <span id="r-style" class="font-bold text-gold"></span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Date & Time:</span> <span id="r-date" class="font-bold text-white"></span></div>
+                <div class="flex justify-between"><span class="text-gray-400">Location:</span> <span id="r-loc" class="font-bold text-white"></span></div>
+                <div class="flex justify-between border-t border-white/10 pt-2"><span class="text-gray-400">Deposit Status:</span> <span class="font-bold text-emerald-400"><i class="fa-solid fa-check-circle"></i> Verified</span></div>
+            </div>
+            <p class="text-[11px] text-gray-400">A confirmation receipt and calendar invitation have been generated. Ryan Bett will contact you via WhatsApp (+254728834107) or email shortly.</p>
+            <div class="flex gap-2">
+                <button onclick="closeReceiptModal()" class="flex-1 bg-cardBg hover:bg-cardHover border gold-border text-white font-semibold py-3 rounded-lg text-xs transition">Close</button>
+                <a href="https://wa.me/254728834107" target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg text-xs transition flex items-center justify-center gap-1">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Ryan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Portal Modal -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="relative bg-cardBg border gold-border max-w-4xl w-full rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gold/20 border border-gold flex items-center justify-center text-gold font-bold"><i class="fa-solid fa-lock"></i></div>
+                    <div>
+                        <h3 class="text-xl font-cinzel font-bold text-white">STUDIO ADMIN PORTAL</h3>
+                        <p class="text-xs text-gray-400">Owner: Ryan Bett • Live Booking & Deposit Tracker</p>
+                    </div>
+                </div>
+                <button onclick="toggleAdminModal()" class="w-8 h-8 rounded-full bg-darkBg text-gray-400 hover:text-gold flex items-center justify-center"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Revenue Summary Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-darkBg p-4 rounded-xl border gold-border">
+                    <span class="text-xs text-gray-400 uppercase">Total Bookings</span>
+                    <div id="admin-count" class="text-2xl font-cinzel font-bold text-gold mt-1">3 Active</div>
+                </div>
+                <div class="bg-darkBg p-4 rounded-xl border gold-border">
+                    <span class="text-xs text-gray-400 uppercase">Verified Deposits</span>
+                    <div id="admin-revenue" class="text-2xl font-cinzel font-bold text-gold mt-1">$150.00 / KES 19.5k</div>
+                </div>
+                <div class="bg-darkBg p-4 rounded-xl border gold-border">
+                    <span class="text-xs text-gray-400 uppercase">Owner WhatsApp</span>
+                    <div class="text-sm font-mono font-bold text-emerald-400 mt-2">+254 728 834107</div>
+                </div>
+            </div>
+
+            <!-- Bookings Table -->
+            <div>
+                <h4 class="text-sm font-cinzel font-bold text-white mb-3"><i class="fa-solid fa-list-check text-gold mr-1"></i> Recent Client Bookings & M-Pesa / MTCN Codes</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-darkBg text-gray-400 uppercase border-b border-white/10">
+                            <tr>
+                                <th class="p-3">Client</th>
+                                <th class="p-3">Style & Placement</th>
+                                <th class="p-3">Date</th>
+                                <th class="p-3">Payment / Ref</th>
+                                <th class="p-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-bookings-list" class="divide-y divide-white/10 text-gray-300">
+                            <tr>
+                                <td class="p-3 font-semibold text-white">Sarah Jenkins</td>
+                                <td class="p-3">Fine-Line Rose (Forearm)</td>
+                                <td class="p-3">Nov 12, 2026</td>
+                                <td class="p-3 font-mono text-gold">M-Pesa: QK8192X100</td>
+                                <td class="p-3"><span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-bold">Confirmed</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-white">David Miller</td>
+                                <td class="p-3">Japanese Sleeve (Arm)</td>
+                                <td class="p-3">Nov 15, 2026</td>
+                                <td class="p-3 font-mono text-gold">MTCN: 9821347801</td>
+                                <td class="p-3"><span class="bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-bold">Confirmed</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+
+        // Gallery Filter
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.gallery-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-black');
+                btn.classList.add('bg-cardBg', 'text-gray-300');
+            });
+            event.target.classList.remove('bg-cardBg', 'text-gray-300');
+            event.target.classList.add('bg-gold', 'text-black');
+
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Lightbox
+        function openLightbox(imgSrc, title, category, desc) {
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox-cat').innerText = category;
+            document.getElementById('lightbox-desc').innerText = desc;
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+            document.getElementById('lightbox-modal').classList.add('flex');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.remove('flex');
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        function bookFromLightbox() {
+            const title = document.getElementById('lightbox-title').innerText;
+            closeLightbox();
+            document.getElementById('booking-style').value = title.includes('Japanese') ? 'Japanese Sleeve' : 'Fine Line / Micro';
+            window.location.href = '#booking';
+        }
+
+        function preselectStyle(styleName) {
+            const select = document.getElementById('booking-style');
+            for(let i=0; i<select.options.length; i++) {
+                if(select.options[i].text.includes(styleName) || select.options[i].value.includes(styleName)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            window.location.href = '#booking';
+        }
+
+        // Price Estimator
+        function calculateEstimate() {
+            const styleMultiplier = parseFloat(document.getElementById('est-style').value);
+            const size = parseInt(document.getElementById('est-size').value);
+            const currency = document.getElementById('est-currency').value;
+
+            let baseMin = 150 + (size * 35 * styleMultiplier);
+            let baseMax = 300 + (size * 60 * styleMultiplier);
+            let hoursMin = Math.max(1, Math.round(size / 3));
+            let hoursMax = hoursMin + 2;
+            let deposit = 50;
+
+            let rate = 1;
+            let symbol = '$';
+            if (currency === 'KES') { rate = 130; symbol = 'KES '; }
+            else if (currency === 'EUR') { rate = 0.92; symbol = '€'; }
+            else if (currency === 'GBP') { rate = 0.78; symbol = '£'; }
+            else if (currency === 'AUD') { rate = 1.52; symbol = 'A$'; }
+            else if (currency === 'JPY') { rate = 155; symbol = '¥'; }
+
+            const finalMin = Math.round(baseMin * rate);
+            const finalMax = Math.round(baseMax * rate);
+            const finalDeposit = Math.round(deposit * rate);
+
+            document.getElementById('size-val').innerText = size + ' inches';
+            document.getElementById('result-price').innerText = symbol + finalMin.toLocaleString() + ' - ' + symbol + finalMax.toLocaleString();
+            document.getElementById('result-time').innerText = hoursMin + ' - ' + hoursMax + ' Hours';
+            document.getElementById('result-deposit').innerText = symbol + finalDeposit.toLocaleString();
+        }
+
+        function transferEstimateToBooking() {
+            window.location.href = '#booking';
+        }
+
+        // Booking Wizard Steps
+        function goToStep(step) {
+            for(let i=1; i<=4; i++) {
+                document.getElementById('wizard-step-' + i).classList.add('hidden');
+                const indicator = document.getElementById('step-indicator-' + i);
+                indicator.className = "text-gray-500 flex items-center gap-1.5";
+                indicator.children[0].className = "w-6 h-6 rounded-full bg-gray-800 text-gray-400 flex items-center justify-center font-bold";
+            }
+            document.getElementById('wizard-step-' + step).classList.remove('hidden');
+            for(let i=1; i<=step; i++) {
+                const indicator = document.getElementById('step-indicator-' + i);
+                indicator.className = "text-gold flex items-center gap-1.5 font-semibold";
+                indicator.children[0].className = "w-6 h-6 rounded-full bg-gold text-black flex items-center justify-center font-bold";
+            }
+        }
+
+        // Payment Method Switcher
+        function switchPayMethod(method) {
+            document.querySelectorAll('.pay-panel').forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.pay-tab').forEach(t => {
+                t.classList.remove('bg-gold', 'text-black');
+                t.classList.add('bg-darkBg', 'text-gray-300');
+            });
+            document.getElementById('panel-' + method).classList.remove('hidden');
+            const tab = document.getElementById('tab-' + method);
+            tab.classList.remove('bg-darkBg', 'text-gray-300');
+            tab.classList.add('bg-gold', 'text-black');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(element) {
+            const content = element.querySelector('.faq-content');
+            const icon = element.querySelector('.fa-chevron-down');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Booking Submit Handler
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const style = document.getElementById('booking-style').value;
+            const placement = document.getElementById('booking-placement').value;
+            const date = document.getElementById('booking-date').value || 'Nov 12, 2026';
+            const location = document.getElementById('client-location').value;
+
+            document.getElementById('r-name').innerText = name;
+            document.getElementById('r-style').innerText = style + ' (' + placement + ')';
+            document.getElementById('r-date').innerText = date;
+            document.getElementById('r-loc').innerText = location;
+            document.getElementById('receipt-id').innerText = '#ROYAL-' + Math.floor(1000 + Math.random() * 9000);
+
+            document.getElementById('receipt-modal').classList.remove('hidden');
+            document.getElementById('receipt-modal').classList.add('flex');
+        }
+
+        function closeReceiptModal() {
+            document.getElementById('receipt-modal').classList.remove('flex');
+            document.getElementById('receipt-modal').classList.add('hidden');
+        }
+
+        // Admin Modal Toggle
+        function toggleAdminModal() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+        }
+
+        // Run initial calculation on load
+        window.onload = function() {
+            calculateEstimate();
+        };
+    </script>
+</body>
+</html>
